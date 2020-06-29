@@ -1,0 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/10/02 18:42:15 by beduroul          #+#    #+#             */
+/*   Updated: 2020/06/27 14:02:42 by user42           ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../include/libft.h"
+
+int	*ft_range(int min, int max)
+{
+	int i;
+	int *dest;
+
+	i = 0;
+	if (min >= max)
+		return (0);
+	if (!(dest = malloc(sizeof(int) * (max - min))))
+		return (0);
+	while (min < max)
+	{
+		dest[i] = min;
+		i++;
+		min++;
+	}
+	return (dest);
+}
